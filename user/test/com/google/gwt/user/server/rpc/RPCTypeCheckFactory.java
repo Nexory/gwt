@@ -410,6 +410,7 @@ public class RPCTypeCheckFactory {
    * Add data for an enum constant. The type written is the declaring class, and
    * the value is the constant's ordinal.
    */
+  @SuppressWarnings("EnumOrdinal")
   public void writeEnum(Enum<?> value) {
     writeStringFromTable(generateSerializedClassString(value.getDeclaringClass()));
     bodyString += Integer.toString(value.ordinal()) + RPC_SEPARATOR_CHAR;
